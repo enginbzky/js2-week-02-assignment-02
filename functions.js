@@ -1,9 +1,3 @@
-// const list = [
-//   "Switzerland55@gmail.com",
-//   "Zurich4155@gmail.com",
-//   "HiCoders41@gmail.com",
-// ];
-
 const changeEmailFromGmailToHicoders = (pStringArray) => {
   let HiCoders = "hicoders.ch";
   const orderOfEmails = pStringArray.map((abbas) =>
@@ -22,17 +16,22 @@ const changeEmailFromGmailToHicoders = (pStringArray) => {
   return result;
 };
 
-const findSuperNumbers = () => {};
+const findSuperNumbers = (pNumberArray) => {
+  const result1 = pNumberArray
+    .map((element) => element.toString().split(""))
+    .map(
+      (element) =>
+        element[0] * element[0] * element[0] +
+        element[1] * element[1] * element[1] +
+        element[2] * element[2] * element[2]
+    );
 
-// let numberss = [455, 789, 153];
+  const result2 = result1.concat(pNumberArray);
+  const result = result2.filter(
+    (element, index) => result2.indexOf(element) !== index
+  );
 
-// const findSuperNumbers = (pNumberArray) => {
-//   const result = pNumberArray.map((element) => element.toString()).find(());
-//   console.log(result);
-// };
-
-// findSuperNumbers(numberss);
+  return result;
+};
 
 export { changeEmailFromGmailToHicoders, findSuperNumbers };
-
-// element[0] ** (1 / 3) + element[1] ** (1 / 3) + element[2] ** (1 / 3);
